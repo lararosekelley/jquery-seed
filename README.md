@@ -74,7 +74,9 @@ Everything is preconfigured for you (with a very simple development server), so 
     $ npm start
 ```
     
-and go to http://localhost:8080 to see the sample project in action.
+and go to http://localhost:8080 to see the sample project in action. It should look like this:
+
+![screenshot](./screenshot.png)
 
 ###Project Structure
 
