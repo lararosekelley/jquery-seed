@@ -92,6 +92,7 @@ Testing your plugin is made easy thanks to JSHint, Chai, Mocha and Selenium-Webd
     
 which will first run JSHint, based on the configuration set in `package.json`:
 
+```json
     "jshintConfig": {
         "node": true,
         "unused": true,
@@ -101,6 +102,7 @@ which will first run JSHint, based on the configuration set in `package.json`:
             "jQuery": false
         }
     }
+```
 
 and then the end to end tests (written using the `selenium-webdriver/testing` module + `chai` and `chai-webdriver` for assertions). 
 You don't need to have a server running, as the included tests will take care of this.
