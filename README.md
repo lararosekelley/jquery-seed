@@ -38,7 +38,7 @@ Use git for this part:
 The included `package.json` file takes care of all the annoying stuff for you! All you need is:
 
 ```sh
-    $npm install
+    $ npm install
 ```
     
 (Beatles fans may argue that you need love as well)
