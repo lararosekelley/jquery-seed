@@ -105,7 +105,10 @@ which will first run JSHint, based on the configuration set in `package.json`:
 and then the end to end tests (written using the `selenium-webdriver/testing` module + `chai` and `chai-webdriver` for assertions). 
 You don't need to have a server running, as the included tests will take care of this.
 
-You can configure Mocha to use different reporters, globals, and default timeouts by editing the `mocha.opts` file in `test/`.
+You can configure Mocha to use different reporters, globals, and default timeouts by editing the `mocha.opts` file in `test/`, which looks like this by default:
+
+    --reporter nyan
+    --timeout 0
 
 The tests run in Chrome by default, but Firefox or another browser can be used, with some small additional setup:
 
