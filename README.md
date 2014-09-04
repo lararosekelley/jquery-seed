@@ -124,6 +124,12 @@ You can configure Mocha to use different reporters, globals, and default timeout
 
     --reporter nyan
     --timeout 0
+    
+If you plan on running your plugin against CI, it might be helpful to use Mocha's xunit reporter and write to a file instead. Just change `npm test` in `package.json` to something like this:
+
+```sh
+    npm install && mocha test/spec/tests.js -R xunit | tee results.xml
+```
 
 The tests run in Chrome by default, but Firefox or another browser can be used, with some small additional setup:
 
