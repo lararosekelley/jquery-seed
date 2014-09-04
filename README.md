@@ -127,27 +127,27 @@ You can configure Mocha to use different reporters, globals, and default timeout
     
 If you plan on running your plugin against CI, it might be helpful to use Mocha's xunit reporter and write to a file instead. Just change `npm test` in `package.json` to something like this:
 
-```sh
+    ```sh
     npm install && mocha test/spec/tests.js -R xunit | tee results.xml
-```
+    ```
 
 The tests run in Chrome by default, but Firefox or another browser can be used, with some small additional setup:
 
-1. Download the selenium standalone server from [here](http://selenium-release.storage.googleapis.com/index.html) and run it using:
+* Download the selenium standalone server from [here](http://selenium-release.storage.googleapis.com/index.html) and run it using:
 
-```sh
+        ```sh
         $ java -jar /path/to/selenium-server-standalone-X.xx.x.jar
-```
+        ```
      
-2. Change your test code to use Firefox instead of Chrome:
+* Change your test code to use Firefox instead of Chrome:
 
-```js
+        ```js
         var driver = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).
             build();
-```
+        ```
      
-3. Run your tests the same way: `npm test`.
+* Run your tests the same way: `npm test`.
 
 ###Changing things
 
