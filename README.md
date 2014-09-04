@@ -27,14 +27,19 @@ Just clone this repository and install the dependencies:
 
 Use git for this part:
 
-    git clone http://github.com/tylucaskelley/jquery-seed
-    cd jquery-seed
+```sh
+
+    $ git clone http://github.com/tylucaskelley/jquery-seed
+    $ cd jquery-seed
+```
 
 **Node modules**
 
 The included `package.json` file takes care of all the annoying stuff for you! All you need is:
 
-    npm install
+```sh
+    $npm install
+```
     
 (Beatles fans may argue that you need love as well)
 
@@ -55,7 +60,9 @@ After that, assuming there were no problems, you'll have a new directory that lo
         
 Not all of these modules are necessary, so if you don't need or want one, just run:
 
-    npm uninstall <module> --save-dev
+```sh
+    $ npm uninstall <module> --save-dev
+```
 
 to remove it and update your `package.json` accordingly.
 
@@ -63,7 +70,9 @@ to remove it and update your `package.json` accordingly.
 
 Everything is preconfigured for you (with a very simple development server), so just start things up with this:
 
-    npm start
+```sh
+    $ npm start
+```
     
 and go to http://localhost:8080 to see the sample project in action.
 
@@ -88,7 +97,9 @@ and go to http://localhost:8080 to see the sample project in action.
 
 Testing your plugin is made easy thanks to JSHint, Chai, Mocha and Selenium-Webdriver. To run your tests in chrome, simply type:
 
-    npm test
+```sh
+    $ npm test
+```
     
 which will first run JSHint, based on the configuration set in `package.json`:
 
@@ -116,14 +127,18 @@ The tests run in Chrome by default, but Firefox or another browser can be used, 
 
 1. Download the selenium standalone server from [here](http://selenium-release.storage.googleapis.com/index.html) and run it using:
 
-        java -jar /path/to/selenium-server-standalone-X.xx.x.jar
-        
+```sh
+        $ java -jar /path/to/selenium-server-standalone-X.xx.x.jar
+```
+     
 2. Change your test code to use Firefox instead of Chrome:
 
+```js
         var driver = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).
             build();
-            
+```
+     
 3. Run your tests the same way: `npm test`.
 
 ###Changing things
