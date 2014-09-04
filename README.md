@@ -27,19 +27,14 @@ Just clone this repository and install the dependencies:
 
 Use git for this part:
 
-```sh
-
     $ git clone http://github.com/tylucaskelley/jquery-seed
     $ cd jquery-seed
-```
 
 **Node modules**
 
 The included `package.json` file takes care of all the annoying stuff for you! All you need is:
 
-```sh
     $ npm install
-```
     
 (Beatles fans may argue that you need love as well)
 
@@ -60,9 +55,7 @@ After that, assuming there were no problems, you'll have a new directory that lo
         
 Not all of these modules are necessary, so if you don't need or want one, just run:
 
-```sh
     $ npm uninstall <module> --save-dev
-```
 
 to remove it and update your `package.json` accordingly.
 
@@ -70,9 +63,7 @@ to remove it and update your `package.json` accordingly.
 
 Everything is preconfigured for you (with a very simple development server), so just start things up with this:
 
-```sh
     $ npm start
-```
     
 and go to http://localhost:8080 to see the sample project in action. It should look like this:
 
@@ -99,9 +90,7 @@ and go to http://localhost:8080 to see the sample project in action. It should l
 
 Testing your plugin is made easy thanks to JSHint, Chai, Mocha and Selenium-Webdriver. To run your tests in chrome, simply type:
 
-```sh
     $ npm test
-```
     
 which will first run JSHint, based on the configuration set in `package.json`:
 
@@ -127,25 +116,19 @@ You can configure Mocha to use different reporters, globals, and default timeout
     
 If you plan on running your plugin against CI, it might be helpful to use Mocha's xunit reporter and write to a file instead. Just change `npm test` in `package.json` to something like this:
 
-    ```sh
     npm install && mocha test/spec/tests.js -R xunit | tee results.xml
-    ```
 
 The tests run in Chrome by default, but Firefox or another browser can be used, with some small additional setup:
 
 * Download the selenium standalone server from [here](http://selenium-release.storage.googleapis.com/index.html) and run it using:
 
-        ```sh
         $ java -jar /path/to/selenium-server-standalone-X.xx.x.jar
-        ```
      
 * Change your test code to use Firefox instead of Chrome:
 
-        ```js
         var driver = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).
             build();
-        ```
      
 * Run your tests the same way: `npm test`.
 
