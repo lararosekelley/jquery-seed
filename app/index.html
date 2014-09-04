@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Hello, World!</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A starter project for making testable jQuery plugins">
+        <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+        <div class="container centered">
+            <h1 class="title">If you see this, .helloWorld() was not called!</h1>
+            <p class="muted">This sample project provides everything you need to make a well-structured and testable jQuery plugin.</p>
+            <img alt="JavaScript Logo" src="img/js.jpg" class="img-rounded img-responsive">
+            <p>Happy Coding!</p>
+        </div>
+    </body>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/hello.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('h1.title').helloWorld({
+                color: 'rgba(172, 43, 43, 1)',
+                size: '38px'
+            });
+        });
+    </script>
+</html>
