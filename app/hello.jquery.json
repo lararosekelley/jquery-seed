@@ -1,0 +1,29 @@
+{
+    "name": "hello",
+    "version": "1.0.0",
+    "title": "Hello, World!",
+    "description": "A jQuery plugin for turning text into Hello, World!",
+    "keywords": [
+        "jquery",
+        "plugin",
+        "text",
+        "hello",
+        "world"
+    ],
+    "homepage": "https://github.com/tylucaskelley/jquery-seed/tree/master/app",
+    "author": {
+        "name": "Ty-Lucas Kelley",
+        "url": "http://tylucaskelley.com"
+    },
+    "bugs": "https://github.com/tylucaskelley/jquery-seed/issues",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/tylucaskelley/jquery-seed/blob/master/LICENSE.txt"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.5"   
+    },
+    "docs": "https://github.com/tylucaskelley/jquery-seed/blob/master/app/README.md"
+}

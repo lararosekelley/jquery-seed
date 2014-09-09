@@ -59,6 +59,15 @@ Not all of these modules are necessary, so if you don't need or want one, just r
 
 to remove it and update your `package.json` accordingly.
 
+###Changing things
+
+The nice part about this seed app is that everything is modular, thanks to `npm`:
+
+* Don't like Chai? Use Assert instead.
+* Don't like http-server? Write up your own using NodeJS.
+* No need for Bootstrap? `npm uninstall bootstrap`.
+* Want to use AngularJS and Protractor? Easy as 1, 2, `npm intsall`.
+
 ###Running the App
 
 Everything is preconfigured for you (with a very simple development server), so just start things up with this:
@@ -67,7 +76,7 @@ Everything is preconfigured for you (with a very simple development server), so 
     
 and go to http://localhost:8080 to see the sample project in action. It should look like this:
 
-![screenshot](./screenshot.png)
+![screenshot](app/img/screenshot.png)
 
 ###Project Structure
 
@@ -132,11 +141,19 @@ The tests run in Chrome by default, but Firefox or another browser can be used, 
      
 * Run your tests the same way: `npm test`.
 
-###Changing things
+###Publishing your plugin
 
-The nice part about this seed app is that everything is modular, thanks to npm:
+This app is set up so that you are ready to publish to jQuery's website. The steps can be found [here](http://plugins.jquery.com/docs/publish/), but I'll go through the basics:
 
-* Don't like Chai? Use Assert instead.
-* Don't like http-server? Write up your own.
-* No need for Bootstrap? `npm uninstall bootstrap`.
-* Want to plug in AngularJS and Protractor to make a full blown application instead of a plugin? Easy as 1, 2, `npm intsall`.
+1. Making your plugin
+    * Stick to the design principles laid out by the jQuery team in [this tutorial](http://learn.jquery.com/plugins/basic-plugin-creation/) and you'll be all set.
+    * Make it useful! Be sure to browse the current repository of plugins first.
+2. Adding a Service Hook
+    * You need a GitHub account to do this: on the settings page for your repository, click the Webhooks & Services link, then click the Configure services button. Scroll down to find the jQuery Plugins service and enable it.
+3. Adding the Manifest file
+    * I've provided a sample file called `hello.jquery.json`; basically, it describes things like the name and description for yoor plugin, the homepage, and dependencies, etc.
+    * You upload this file [here](http://plugins.jquery.com/docs/publish/#validate-your-manifest-file-here) to make sure everything is valid.
+4. Tagging versions
+    * This is the last step; simply `$ git tag x.x.x` (replace x's with your version number) and then do a `$ git push origin --tags` and the jQuery plugin site will take care of the rest.
+
+If you run into any trouble or feel like you've been waiting too long for your plugin to finish publishing, check the [error logs](http://plugins.jquery.com/error.log)!
