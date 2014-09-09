@@ -1,3 +1,4 @@
 .DS_Store
+npm-debug.log
 app/npm-debug.log
 app/node_modules
