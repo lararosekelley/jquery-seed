@@ -13,6 +13,11 @@ The project contains everything you need to instantly get started with your jQue
 
 The sample app provided demonstrates a trivial plugin, which changes text to "Hello, World!" when called.
 
+### What's New
+
+* Minify on `npm start` (10/6/2014)
+* Added 5 second timeout to `mocha.opts` (10/6/2014)
+
 ###The Setup
 
 Just clone this repository and install the dependencies:
