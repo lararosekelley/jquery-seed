@@ -26,9 +26,14 @@ Just clone this repository and install the dependencies:
 **Clone jquery-seed**
 
 Use git for this part:
-
+    
+    $ mkdir my-project && cd my-project
     $ git clone http://github.com/tylucaskelley/jquery-seed
-    $ cd jquery-seed
+
+**Move everything into your own project and delete unneeded files**
+
+    $ mv jquery-seed/app/* .
+    $ rm -rf jquery-seed
 
 **Node modules**
 
