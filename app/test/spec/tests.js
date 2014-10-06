@@ -1,14 +1,13 @@
 var webdriver = require('selenium-webdriver');
-var test = require('selenium-webdriver/testing');
 var server = require('node-http-server');
 var path = require('path');
 var chai = require('chai');
 var chaiDriver = require('chai-webdriver');
+var test = require('selenium-webdriver/testing');
 
-var expect = chai.expect;
-var it = test.it;
 var describe = test.describe;
-var by = webdriver.By;
+var it = test.it;
+var expect = chai.expect;
 
 var driver = new webdriver.Builder().
     withCapabilities(webdriver.Capabilities.chrome()).
