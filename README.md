@@ -1,24 +1,33 @@
-#jQuery Seed
+# jQuery Seed
 
-###*Testable plugins in the blink of an eye*
+### *Quickly create well-organized, testable plugins*
 
 **by Ty-Lucas Kelley**
 
 ---
 
-This project is a skeleton for an organized and testable jQuery plugin (or a full web app with not too much extra work). 
+```bash
+$ npm install -g jquery-seed
+$ jqseed
+```
+
+This project is a skeleton for an organized and testable jQuery plugin.
 It can be used to quickly bootstrap a plugin and development environment.
 
-The project contains everything you need to instantly get started with your jQuery plugin, get it tested, and make a demo.
+The project contains everything you need to instantly get started with
+your jQuery plugin, get it tested, and make a demo.
 
-The sample app provided demonstrates a trivial plugin, which changes text to "Hello, World!" when called.
+The sample app provided demonstrates a trivial plugin,
+which changes text to "Hello, World!" when called.
 
 ### What's New
 
 * Minify on `npm start` (10/6/2014)
-* Added 5 second timeout to `mocha.opts` (10/6/2014)
+* Moved app to top-level directory so `git clone` is more effective (12/19/2014)
+* Added to npm and made generator script (12/19/2014)
+* Minor refactoring (12/19/2014)
 
-###The Setup
+### The Setup
 
 Just clone this repository and install the dependencies:
 
@@ -31,22 +40,22 @@ Just clone this repository and install the dependencies:
 **Clone jquery-seed**
 
 Use git for this part:
-    
+
     $ mkdir my-project && cd my-project
     $ git clone http://github.com/tylucaskelley/jquery-seed
 
-**Move everything into your own project and delete unneeded files**
+Or, you can use the generator script:
 
-    $ mv jquery-seed/app/* .
-    $ rm -rf jquery-seed
+    $ npm install -g jquery-seed
+    $ jqseed
+
+The `jqseed` command will clone the repository for you.
 
 **Node modules**
 
 The included `package.json` file takes care of all the annoying stuff for you! All you need is:
 
     $ npm install
-    
-(Beatles fans may argue that you need love as well)
 
 After that, assuming there were no problems, you'll have a new directory that looks like this:
 
@@ -62,14 +71,14 @@ After that, assuming there were no problems, you'll have a new directory that lo
         node-http-server/
         normalize.css/
         selenium-webdriver/
-        
+
 Not all of these modules are necessary, so if you don't need or want one, just run:
 
     $ npm uninstall <module> --save-dev
 
 to remove it and update your `package.json` accordingly.
 
-###Changing things
+### Changing things
 
 The nice part about this seed app is that everything is modular, thanks to `npm`:
 
@@ -78,39 +87,44 @@ The nice part about this seed app is that everything is modular, thanks to `npm`
 * No need for Bootstrap? `npm uninstall bootstrap`.
 * Want to use AngularJS and Protractor? Easy as 1, 2, `npm intsall`.
 
-###Running the App
+### Running the App
 
 Everything is preconfigured for you (with a very simple development server), so just start things up with this:
 
     $ npm start
-    
-and go to http://localhost:8080 to see the sample project in action. It should look like this:
+
+and go to http://localhost:3000 to see the sample project in action. It should look like this:
 
 ![screenshot](app/img/screenshot.png)
 
-###Project Structure
+### Project Structure
 
-    app/                    --> All of the app source files
-        css/                    --> CSS stylesheets
-            main.css                --> Sample CSS
-        img/                    --> Images
-            js.jpg                  --> Sample image
-        index.html              --> Sample index page
-        js/                     --> JavaScript source
-            hello.js                --> Sample jQuery plugin
-        package.json            --> NPM stuff: go here for jshint, dependencies, and app info
-        README.md               --> Sample README
-        test/                   --> All test source
-            mocha.opts              --> Mocha config file
-            spec/                   --> Test files
-                tests.js                --> Sample e2e tests
-                
-###Testing
+    bin/                    --> Binary files
+        generate                --> Project generator
+    css/                    --> CSS stylesheets
+        main.css                --> Sample CSS
+    img/                    --> Images
+        js.jpg                  --> Sample image
+    index.html              --> Sample index page
+    js/                     --> JavaScript source
+        jquery.hello.js                --> Sample plugin's source code
+    .gitignore              --> Files that git will ignore
+    .travis.yml             --> Travis CI settings
+    hello.jquery.json       --> jQuery package information
+    package.json            --> NPM stuff: go here for jshint, dependencies, and app info
+    README.md               --> This README
+    LICENSE.txt             --> MIT License  
+    test/                   --> All test source
+        mocha.opts              --> Mocha config file
+        spec/                   --> Test files
+            tests.js                --> Sample e2e tests
+
+### Testing
 
 Testing your plugin is made easy thanks to JSHint, Chai, Mocha and Selenium-Webdriver. To run your tests in chrome, simply type:
 
     $ npm test
-    
+
 which will first run JSHint, based on the configuration set in `package.json`:
 
 ```json
@@ -125,14 +139,14 @@ which will first run JSHint, based on the configuration set in `package.json`:
     }
 ```
 
-and then the end to end tests (written using the `selenium-webdriver/testing` module + `chai` and `chai-webdriver` for assertions). 
+and then the end to end tests (written using the `selenium-webdriver/testing` module + `chai` and `chai-webdriver` for assertions).
 You don't need to have a server running, as the included tests will take care of this.
 
 You can configure Mocha to use different reporters, globals, and default timeouts by editing the `mocha.opts` file in `test/`, which looks like this by default:
 
     --reporter nyan
     --timeout 0
-    
+
 If you plan on running your plugin against CI, it might be helpful to use Mocha's xunit reporter and write to a file instead. Just change `npm test` in `package.json` to something like this:
 
     npm install && mocha test/spec/tests.js -R xunit | tee results.xml
@@ -142,13 +156,13 @@ The tests run in Chrome by default, but Firefox or another browser can be used, 
 * Download the selenium standalone server from [here](http://selenium-release.storage.googleapis.com/index.html) and run it using:
 
         $ java -jar /path/to/selenium-server-standalone-X.xx.x.jar
-     
+
 * Change your test code to use Firefox instead of Chrome:
 
         var driver = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).
             build();
-     
+
 * Run your tests the same way: `npm test`.
 
 ###Publishing your plugin

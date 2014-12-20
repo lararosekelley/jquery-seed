@@ -10,10 +10,10 @@
         "hello",
         "world"
     ],
-    "homepage": "https://github.com/tylucaskelley/jquery-seed/tree/master/app",
+    "homepage": "https://github.com/tylucaskelley/jquery-seed",
     "author": {
         "name": "Ty-Lucas Kelley",
-        "url": "http://tylucaskelley.com"
+        "url": "http://www.tylucaskelley.com"
     },
     "bugs": "https://github.com/tylucaskelley/jquery-seed/issues",
     "licenses": [
@@ -23,7 +23,7 @@
         }
     ],
     "dependencies": {
-        "jquery": ">=1.5"   
+        "jquery": ">=1.5"
     },
-    "docs": "https://github.com/tylucaskelley/jquery-seed/blob/master/app/README.md"
+    "docs": "https://github.com/tylucaskelley/jquery-seed/blob/master/README.md"
 }
