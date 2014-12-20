@@ -1,6 +1,5 @@
 {
   "name": "jquery-seed",
-  "private": true,
   "version": "2.0.0",
   "author": "Ty-Lucas Kelley <tylucaskelley@gmail.com>",
   "description": "A starter project for making jQuery plugins.",
