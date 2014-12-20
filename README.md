@@ -95,7 +95,7 @@ Everything is preconfigured for you (with a very simple development server), so 
 
 and go to http://localhost:3000 to see the sample project in action. It should look like this:
 
-![screenshot](app/img/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/tylucaskelley/jquery-seed/master/img/screenshot.png)
 
 ### Project Structure
 
