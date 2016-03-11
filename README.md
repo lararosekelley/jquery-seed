@@ -5,6 +5,9 @@
 **by Ty-Lucas Kelley**
 
 [![NPM](https://nodei.co/npm/jquery-seed.png?compact=true)](https://nodei.co/npm/jquery-seed/)
+
+**NOTE**: This project is no longer maintained
+
 ---
 
 ```bash
